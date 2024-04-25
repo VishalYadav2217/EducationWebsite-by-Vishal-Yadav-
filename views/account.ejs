@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="/style2.css">
+    
+</head>
+<body>
+    <h1 text-align="center">Welcome to your Account Page</h1>
+    <div class="form-container">
+        <p>Name: <b><%= user.name %></b></p>
+        <p>Email: <b><%= user.email %></b></p>
+        <p>Manage or Update your account settings.</p>
+        <form action="/account/update" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            
+            <button type="submit" onclick="myFunction()">Update</button>
+        </form>
+    </div>
+    
+    <b><a href="/logout">Logout</a></b>
+    <script>
+        function myFunction() {
+            alert("Password updated successfully. Kindly login again.");
+        }
+    </script>
+    
+    <% if (req.query.passwordUpdated === 'true') { %>
+       
+    <% } %>
+</body>
+</html>
