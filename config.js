@@ -26,6 +26,8 @@ const Loginschema = new mongoose.Schema({
     }
 });
 
+
+
 // collection part
 const collection = new mongoose.model("users", Loginschema);
 
